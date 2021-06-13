@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MessServ</name>
+    </assembly>
+    <members>
+        <member name="T:WebAPIApp.Controllers.MessageServiceController">
+            <summary>
+            Logic of all functions.
+            </summary>
+        </member>
+        <member name="M:WebAPIApp.Controllers.MessageServiceController.Post">
+            <summary>
+            Post method to create random amount users.
+            </summary>
+            <returns>Message with amount of users.</returns>
+        </member>
+        <member name="M:WebAPIApp.Controllers.MessageServiceController.Post(System.String)">
+            <summary>
+            Post method to create the user.
+            </summary>
+            <param name="name">Name of the user.</param>
+            <returns>Message of the result of creation.</returns>
+        </member>
+        <member name="M:WebAPIApp.Controllers.MessageServiceController.GetAllUsers">
+            <summary>
+            Get method to know all users.
+            </summary>
+            <returns>List of all users with info about them.</returns>
+        </member>
+        <member name="M:WebAPIApp.Controllers.MessageServiceController.GetUserInfo(System.String)">
+            <summary>
+            Get method to get all information about the user by email.
+            </summary>
+            <param name="email">Email of user (Name + "@love.you").</param>
+            <returns>Information about appropriate user.</returns>
+        </member>
+        <member name="M:WebAPIApp.Controllers.MessageServiceController.GetMessagesBySender(System.String)">
+            <summary>
+            Get method to get all messages that the user send.
+            </summary>
+            <param name="senderID">Email of user (Name + "@love.you").</param>
+            <returns>Messages that the user send.</returns>
+        </member>
+        <member name="M:WebAPIApp.Controllers.MessageServiceController.GetMessagesByReceiver(System.String)">
+            <summary>
+            Get method to get all messages that the user recieve.
+            </summary>
+            <param name="receiverID">Email of user (Name + "@love.you").</param>
+            <returns>Messages that the user recieve.</returns>
+        </member>
+        <member name="M:WebAPIApp.Controllers.MessageServiceController.GetMessageBetween(System.String,System.String)">
+            <summary>
+            Get method to get all messages between to users (by one side).
+            </summary>
+            <param name="senderID">Email of sender user (Name + "@love.you").</param>
+            <param name="receiverID">Email of receiver user (Name + "@love.you").</param>
+            <returns>Messages between sender and receiver users.</returns>
+        </member>
+        <member name="T:MessServ.Models.Message">
+            <summary>
+            Class of messages.
+            </summary>
+        </member>
+        <member name="M:MessServ.Models.Message.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Construstor to create the message.
+            </summary>
+            <param name="sub">Subject (topic) of the message.</param>
+            <param name="text">Text of the message.</param>
+            <param name="sender">Sender user email of the message</param>
+            <param name="receiver">Receiver user email of the messgae.</param>
+        </member>
+        <member name="M:MessServ.Models.Message.#ctor">
+            <summary>
+            Empty constructor for serialization.
+            </summary>
+        </member>
+        <member name="M:MessServ.Models.Message.CreateMessage(System.String,System.String)">
+            <summary>
+            Create random message.
+            </summary>
+            <param name="Semail">Sender user email.</param>
+            <param name="Remail">Reciever user email.</param>
+            <returns></returns>
+        </member>
+        <member name="T:MessServ.Models.Serialization">
+            <summary>
+            Class for serialization
+            </summary>
+        </member>
+        <member name="M:MessServ.Models.Serialization.Serialize(System.Collections.Generic.List{MessServ.Models.User})">
+            <summary>
+            Serialize all data.
+            </summary>
+            <param name="Users">List of elements to serialize.</param>
+        </member>
+        <member name="M:MessServ.Models.Serialization.Deserialize(System.Collections.Generic.List{MessServ.Models.User}@)">
+            <summary>
+            Deserialize all data.
+            </summary>
+            <param name="Users">List where we put all data.</param>
+        </member>
+        <member name="M:MessServ.Models.User.#ctor(System.String,System.String)">
+            <summary>
+            Constructor to create the user.
+            </summary>
+            <param name="name">Name of the user.</param>
+            <param name="email">Email of the user.</param>
+        </member>
+        <member name="M:MessServ.Models.User.#ctor">
+            <summary>
+            Empty constructor for serialization.
+            </summary>
+        </member>
+        <member name="M:MessServ.Models.User.CreateUsers(System.Collections.Generic.List{MessServ.Models.User}@)">
+            <summary>
+            Create n random users.
+            </summary>
+            <param name="Users">List where we put all users.</param>
+        </member>
+    </members>
+</doc>
